@@ -21,4 +21,5 @@ In order to use this repository:
 9. The enter the Domain, which is "localhost:5000" in our case:
 <img width="739" alt="image" src="https://github.com/aryan619348/PDFGPT/assets/46323314/b5b515cd-ac29-458a-b291-b9703d77e1d6">
 
-10. In the prompt enter the google drive link to your pdf and start asking away 😃 
+10. Click "Find Manifest File" and you should be good to go!
+11. In the prompt enter the google drive link to your pdf and start asking away 😃 
