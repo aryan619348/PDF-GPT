@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "PDF Processing",
+  "name_for_model": "pdfprocessing",
+  "description_for_human": "Plugin for processing PDF files and answering questions.",
+  "description_for_model": "This plugin offers an AI-powered PDF processing capability. It enables users to extract text from PDF files stored in Google Drive and provides answers to questions based on the extracted content. Simply provide a Google Drive link to a PDF file, pose a question, and receive a pertinent answer based on the document's content. Leverage this plugin to streamline your document analysis workflows, enabling efficient processing and interaction with PDFs stored in the cloud.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:5000/.well-known/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:5000/logo.png",
+  "contact_email": "support@example.com",
+  "legal_info_url": "http://www.example.com/legal"
+}
