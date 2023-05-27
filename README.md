@@ -1,4 +1,4 @@
-# PDFGPT
+# PDF-GPT
 
 This is a plugin developed for GPT-4. 
 
@@ -6,7 +6,8 @@ DEMO:
 ![image](https://github.com/aryan619348/PDFGPT/assets/46323314/849a063d-d4c4-4d58-845b-3c67b21fd807)
 
 Can also be accesed at http://localhost:5000/ :
-<img width="1677" alt="image" src="https://github.com/aryan619348/PDFGPT/assets/46323314/548ebece-56e0-4cbd-810a-b9e27fc2b024">
+<img width="1680" alt="image" src="https://github.com/aryan619348/PDFGPT/assets/46323314/d1103d1e-4a27-4605-9a96-ae343420110c">
+
 
 
 In order to use this repository:
