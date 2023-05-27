@@ -14,6 +14,10 @@
       color: #fff;
     }
 
+    .center-content {
+      text-align: center;
+    }
+
     form {
       margin-bottom: 20px;
     }
@@ -48,16 +52,18 @@
   </style>
 </head>
 <body>
-<h1>PDF-GPT</h1>
-<form id="apiForm">
-  <label for="urlInput">URL:</label>
-  <input type="text" id="urlInput" required><br><br>
-  <label for="queryInput">Query:</label>
-  <input type="text" id="queryInput" required><br><br>
-  <button type="submit">Submit</button>
-</form>
-<h2>Output:</h2>
-<div id="output"></div>
+<div class="center-content">
+  <h1>PDF-GPT</h1>
+  <form id="apiForm">
+    <label for="urlInput">URL:</label>
+    <input type="text" id="urlInput" required><br><br>
+    <label for="queryInput">Query:</label>
+    <input type="text" id="queryInput" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <h2>Output:</h2>
+  <div id="output"></div>
+</div>
 
 <script>
   document.getElementById("apiForm").addEventListener("submit", function (event) {

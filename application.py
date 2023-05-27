@@ -10,6 +10,7 @@ from googleapiclient.http import MediaIoBaseDownload
 from io import BytesIO
 from flask_cors import CORS
 from waitress import serve
+from flask import jsonify
 from langchain.chat_models import ChatOpenAI
 import os
 
@@ -18,7 +19,6 @@ application = Flask(__name__)
 CORS(application)
 
 # Google Drive API credentials
-API_KEY = ""
 API_KEY = ""
 
 @application.route('/')
