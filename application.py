@@ -98,4 +98,4 @@ def serve_openapi_yaml():
     return send_from_directory('.', 'openapi.yaml', mimetype='text/yaml')
 
 if __name__ == '__main__':
-    serve(application,host="0.0.0.0",port=80)
+    serve(application,host="0.0.0.0",port=8000)
