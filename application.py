@@ -14,12 +14,12 @@ from flask import jsonify
 from langchain.chat_models import ChatOpenAI
 import os
 
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "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"
 application = Flask(__name__)
 CORS(application)
 
 # Google Drive API credentials
-API_KEY = ""
+API_KEY = "AIzaSyCLv9VBWgjp73EXnF5oWRd6lc6vSWDxwgw"
 
 @application.route('/')
 def index():
@@ -98,4 +98,4 @@ def serve_openapi_yaml():
     return send_from_directory('.', 'openapi.yaml', mimetype='text/yaml')
 
 if __name__ == '__main__':
-    serve(application, host="0.0.0.0", port=5000)
+    serve(application)
