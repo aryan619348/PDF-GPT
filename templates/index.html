@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PDF Processing</title>
+  <title>PDF-GPT</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    #output {
+      background-color: #333;
+      padding: 10px;
+      border-radius: 3px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
-<h1>PDF Processing</h1>
-<form action="/process_pdf" method="post">
-  <label for="drive_link">Google Drive Link:</label><br>
-  <input type="text" id="drive_link" name="drive_link" required><br><br>
-  <label for="question">Question:</label><br>
-  <input type="text" id="question" name="question" required><br><br>
-  <input type="submit" value="Process PDF">
+<h1>PDF-GPT</h1>
+<form id="apiForm">
+  <label for="urlInput">URL:</label>
+  <input type="text" id="urlInput" required><br><br>
+  <label for="queryInput">Query:</label>
+  <input type="text" id="queryInput" required><br><br>
+  <button type="submit">Submit</button>
 </form>
+<h2>Output:</h2>
+<div id="output"></div>
+
+<script>
+  document.getElementById("apiForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var url = document.getElementById("urlInput").value;
+    var query = document.getElementById("queryInput").value;
+
+    fetch("/process_pdf", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        file_link: url,
+        question: query
+      })
+    })
+            .then(response => response.json())
+            .then(data => {
+              document.getElementById("output").innerText = data.answer;
+            })
+            .catch(error => {
+              console.error("Error:", error);
+            });
+  });
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<html>-->
-<!--<head>-->
-<!--  <title>PDF Processing</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>PDF Processing</h1>-->
-<!--<form action="/process_pdf" method="POST" enctype="multipart/form-data">-->
-<!--  <label for="pdf">PDF File:</label>-->
-<!--  <input type="file" id="pdf" name="pdf"><br><br>-->
-
-<!--  <label for="question">Question:</label>-->
-<!--  <input type="text" id="question" name="question"><br><br>-->
-
-<!--  <input type="submit" value="Submit">-->
-<!--</form>-->
-
-<!--<div id="answer-section" style="display: none;">-->
-<!--  <h2>Answer:</h2>-->
-<!--  <p id="answer"></p>-->
-<!--</div>-->
-
-<!--<script>-->
-<!--  // Handle form submission-->
-<!--  document.querySelector('form').addEventListener('submit', async function(event) {-->
-<!--    event.preventDefault();-->
-
-<!--    // Get form data-->
-<!--    const formData = new FormData(this);-->
-
-<!--    // Send POST request-->
-<!--    const response = await fetch('/process_pdf', {-->
-<!--      method: 'POST',-->
-<!--      body: formData-->
-<!--    });-->
-
-<!--    // Parse response as JSON-->
-<!--    const data = await response.json();-->
-
-<!--    // Update answer section with the received answer-->
-<!--    const answerSection = document.getElementById('answer-section');-->
-<!--    const answerElement = document.getElementById('answer');-->
-<!--    answerElement.textContent = data.answer;-->
-<!--    answerSection.style.display = 'block';-->
-<!--  });-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->

@@ -10,14 +10,15 @@ from googleapiclient.http import MediaIoBaseDownload
 from io import BytesIO
 from flask_cors import CORS
 from waitress import serve
+from langchain.chat_models import ChatOpenAI
 import os
 
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "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"
 application = Flask(__name__)
 CORS(application)
 
 # Google Drive API credentials
-API_KEY = ""
+API_KEY = "AIzaSyCLv9VBWgjp73EXnF5oWRd6lc6vSWDxwgw"
 
 @application.route('/')
 def index():
@@ -56,8 +57,8 @@ def process_pdf():
     # Create embeddings
     embeddings = OpenAIEmbeddings()
     docsearch = FAISS.from_texts(texts, embeddings)
-
-    chain = load_qa_chain(OpenAI(), chain_type="stuff")
+    llm = ChatOpenAI(temperature=0,model_name='gpt-3.5-turbo')
+    chain = load_qa_chain(llm, chain_type="stuff")
 
     # Perform the question answering
     docs = docsearch.similarity_search(question)
