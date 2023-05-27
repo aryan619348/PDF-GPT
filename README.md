@@ -1,4 +1,4 @@
-# PDFGPT
+# PDF-GPT
 
 This is a plugin developed for GPT-4. 
 
