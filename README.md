@@ -7,8 +7,10 @@ Website is at https://pdfgptaryan.azurewebsites.net/
 
 The plugin can also be accesed at the same link https://pdfgptaryan.azurewebsites.net/
 In the plugin store, select the "Install an unverified plugin" option and then use the link.
+
 DEMO for the plugin:
-![image](https://github.com/aryan619348/PDFGPT/assets/46323314/849a063d-d4c4-4d58-845b-3c67b21fd807)
+<img width="1417" alt="Screenshot 2023-05-28 at 10 41 33 PM" src="https://github.com/aryan619348/PDF-GPT/assets/46323314/412f138d-c82c-4b14-83b3-99925a61d791">
+
 
 Can also be accesed locally at http://localhost:80/ :
 
