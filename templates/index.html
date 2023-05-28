@@ -1,95 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>PDF-GPT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Answering API</title>
   <style>
     body {
       background-color: #222;
       color: #fff;
       font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
       padding: 20px;
-    }
-
-    h1, h2 {
-      color: #fff;
-    }
-
-    .center-content {
+      box-sizing: border-box;
       text-align: center;
     }
 
-    form {
-      margin-bottom: 20px;
+    h1 {
+      text-align: center;
     }
 
     label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     input[type="text"] {
-      width: 300px;
-      padding: 5px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
       border: 1px solid #ccc;
-      border-radius: 3px;
+      border-radius: 4px;
     }
 
-    button[type="submit"] {
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      display: block;
+      margin-top: 10px;
       padding: 10px 20px;
-      background-color: #4285f4;
+      font-size: 16px;
+      background-color: #007bff;
       color: #fff;
       border: none;
-      border-radius: 3px;
+      border-radius: 4px;
       cursor: pointer;
     }
 
-    #output {
-      background-color: #333;
+    .output {
+      margin-top: 20px;
       padding: 10px;
-      border-radius: 3px;
-      white-space: pre-wrap;
+      background-color: #333;
+      border-radius: 4px;
+    }
+
+    .output p {
+      margin: 0;
+      color: #fff;
     }
   </style>
 </head>
+
 <body>
-<div class="center-content">
-  <h1>PDF-GPT</h1>
-  <form id="apiForm">
-    <label for="urlInput">URL:</label>
-    <input type="text" id="urlInput" required><br><br>
-    <label for="queryInput">Query:</label>
-    <input type="text" id="queryInput" required><br><br>
-    <button type="submit">Submit</button>
-  </form>
-  <h2>Output:</h2>
-  <div id="output"></div>
+<div class="container">
+  <h1>Question Answering API</h1>
+  <label for="url">PDF URL:</label>
+  <input type="text" id="url" placeholder="Enter PDF URL">
+  <label for="question">Question:</label>
+  <textarea id="question" placeholder="Enter your question"></textarea>
+  <button onclick="processQuestion()">Submit</button>
+  <div class="output">
+    <p id="answer"></p>
+  </div>
 </div>
 
 <script>
-  document.getElementById("apiForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    var url = document.getElementById("urlInput").value;
-    var query = document.getElementById("queryInput").value;
-
-    fetch("/process_pdf", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        file_link: url,
-        question: query
-      })
-    })
-            .then(response => response.json())
-            .then(data => {
-              document.getElementById("output").innerText = data.answer;
-            })
-            .catch(error => {
-              console.error("Error:", error);
-            });
-  });
+  function processQuestion() {
+    var url = document.getElementById("url").value;
+    var question = document.getElementById("question").value;
+    var request = new XMLHttpRequest();
+    request.open("POST", "/process_pdf", true);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+        var response = JSON.parse(request.responseText);
+        document.getElementById("answer").textContent = response.answer;
+      }
+    };
+    var data = JSON.stringify({ "file_link": url, "question": question });
+    request.send(data);
+  }
 </script>
 </body>
+
 </html>
