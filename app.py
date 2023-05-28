@@ -14,12 +14,12 @@ from flask import jsonify
 from langchain.chat_models import ChatOpenAI
 import os
 
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "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"
 app = Flask(__name__)
 CORS(app)
 
 # Google Drive API credentials
-API_KEY = ""
+API_KEY = "AIzaSyCLv9VBWgjp73EXnF5oWRd6lc6vSWDxwgw"
 
 @app.route('/')
 def index():

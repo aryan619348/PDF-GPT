@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "http://localhost:5000/.well-known/openapi.yaml",
+    "url": "https://pdfgptaryan.azurewebsites.net/.well-known/openapi.yaml",
     "is_user_authenticated": false
   },
   "logo_url": "http://localhost:5000/logo.png",

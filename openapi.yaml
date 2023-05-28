@@ -4,7 +4,7 @@ info:
   description: API for extracting text from PDF files and performing question answering on the extracted text.
   version: 1.0.0
 servers:
-  - url: http://localhost:5000
+  - url: https://pdfgptaryan.azurewebsites.net/
 paths:
   /process_pdf:
     post:
