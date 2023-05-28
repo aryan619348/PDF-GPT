@@ -5,7 +5,8 @@ The goal for this project was to develop a plugin for OpenAI and a Website for P
 Website is at https://pdfgptaryan.azurewebsites.net/
 <img width="1680" alt="Screenshot 2023-05-28 at 4 22 08 PM" src="https://github.com/aryan619348/PDF-GPT/assets/46323314/9e276237-f64b-47ef-860d-23fbc533c131">
 
-
+The plugin can also be accesed at the same link https://pdfgptaryan.azurewebsites.net/
+In the plugin store, select the "Install an unverified plugin" option and then use the link.
 DEMO for the plugin:
 ![image](https://github.com/aryan619348/PDFGPT/assets/46323314/849a063d-d4c4-4d58-845b-3c67b21fd807)
 
