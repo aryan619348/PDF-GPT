@@ -1,41 +1,47 @@
 openapi: 3.0.1
 info:
   title: PDF Question Answering API
-  description: API for extracting text from PDF files and performing question answering on the extracted text.
-  version: 1.0.0
+  description: API for extracting text from PDF files and performing question answering
+  version: 'v1'
 servers:
   - url: https://pdfgptaryan.azurewebsites.net/
 paths:
+  /:
+    get:
+      summary: Home endpoint
+      operationId: getHome
+      responses:
+        '200':
+          description: Successful response
+
   /process_pdf:
     post:
-      summary: Process a PDF file and perform question answering
-      operationId: processPdf
+      summary: Process PDF file and perform question answering
+      operationId: processPDF
       requestBody:
         required: true
         content:
-          app/json:
+          application/json:
             schema:
               type: object
               properties:
                 file_link:
                   type: string
-                  description: The Google Drive link to the PDF file
+                  description: Link to the PDF file in Google Drive
                 question:
                   type: string
                   description: The question to be answered
+              required:
+                - file_link
+                - question
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
-            app/json:
+            application/json:
               schema:
                 type: object
                 properties:
                   answer:
                     type: string
                     description: The answer to the question
-
-
-
-
-
