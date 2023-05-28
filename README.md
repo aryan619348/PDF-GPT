@@ -1,13 +1,15 @@
 # PDF-GPT
 
-This is a plugin developed for GPT-4. 
+The goal for this project was to develop a plugin for OpenAI and a Website for PDF-GPT.
 
-DEMO:
+Website is at https://pdfgptaryan.azurewebsites.net/
+<img width="1680" alt="Screenshot 2023-05-28 at 4 22 08 PM" src="https://github.com/aryan619348/PDF-GPT/assets/46323314/9e276237-f64b-47ef-860d-23fbc533c131">
+
+
+DEMO for the plugin:
 ![image](https://github.com/aryan619348/PDFGPT/assets/46323314/849a063d-d4c4-4d58-845b-3c67b21fd807)
 
-Can also be accesed at http://localhost:5000/ :
-<img width="1680" alt="image" src="https://github.com/aryan619348/PDFGPT/assets/46323314/d1103d1e-4a27-4605-9a96-ae343420110c">
-
+Can also be accesed locally at http://localhost:80/ :
 
 
 In order to use this repository:
