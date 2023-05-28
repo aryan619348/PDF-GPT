@@ -10,8 +10,6 @@ DEMO for the plugin:
 ![image](https://github.com/aryan619348/PDFGPT/assets/46323314/849a063d-d4c4-4d58-845b-3c67b21fd807)
 
 Can also be accesed locally at http://localhost:80/ :
-<img width="1680" alt="image" src="https://github.com/aryan619348/PDFGPT/assets/46323314/d1103d1e-4a27-4605-9a96-ae343420110c">
-
 
 
 In order to use this repository:
