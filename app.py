@@ -14,7 +14,7 @@ from flask import jsonify
 from langchain.chat_models import ChatOpenAI
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 app = Flask(__name__)
 CORS(app)
 
