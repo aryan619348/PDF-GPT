@@ -15,17 +15,17 @@ from langchain.chat_models import ChatOpenAI
 import os
 
 os.environ["OPENAI_API_KEY"] = "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"
-application = Flask(__name__)
-CORS(application)
+app = Flask(__name__)
+CORS(app)
 
 # Google Drive API credentials
 API_KEY = "AIzaSyCLv9VBWgjp73EXnF5oWRd6lc6vSWDxwgw"
 
-@application.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-@application.route('/process_pdf', methods=['POST'])
+@app.route('/process_pdf', methods=['POST'])
 def process_pdf():
     # Get the file link and question from the request
     data = request.get_json()
@@ -86,16 +86,16 @@ def download_pdf(file_id):
         status, done = downloader.next_chunk()
     return pdf_bytes.getvalue()
 
-@application.route('/.well-known/ai-plugin.json')
+@app.route('/.well-known/ai-plugin.json')
 def serve_ai_plugin():
     return send_from_directory('.',
                                'ai-plugin.json',
                                mimetype='application/json')
 
 
-@application.route('/.well-known/openapi.yaml')
+@app.route('/.well-known/openapi.yaml')
 def serve_openapi_yaml():
     return send_from_directory('.', 'openapi.yaml', mimetype='text/yaml')
 
 if __name__ == '__main__':
-    serve(application,host="0.0.0.0",port=80)
+    serve(app,host="0.0.0.0",port=80)
