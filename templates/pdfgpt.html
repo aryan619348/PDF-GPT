@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF GPT Test</title>
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+<h1>Messaging App</h1>
+
+<div id="chatContainer">
+  <div class="message">
+    <div class="message-body">
+      <p>Welcome to PDF GPT</p>
+    </div>
+  </div>
+
+  <form id="pdfForm">
+    <div class="message">
+      <div class="message-body">
+        <label for="fileLink">File Link:</label>
+        <input type="text" id="fileLink" name="fileLink">
+
+        <label for="question">Question:</label>
+        <input type="text" id="question" name="question">
+
+        <button type="button" onclick="processPDF()">Process PDF</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="answerContainer"></div>
+</div>
+
+<script src="static/script.js"></script>
+</body>
+</html>

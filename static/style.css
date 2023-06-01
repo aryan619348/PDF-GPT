@@ -1,0 +1,47 @@
+body {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+form {
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button[type="button"] {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#answerContainer {
+    margin-top: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
